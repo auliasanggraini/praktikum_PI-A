@@ -102,15 +102,15 @@
 ## Pembuatan Model
 * ### Langkah 1
 >Melakukan pembuatan direktori models di tingkat yang sama dengan index.js
-![img1](../SS/Modul3/25.png)
+![img1](../SS/Modul3/41.png)
 
 * ### Langkah 2
 > Buatlah file book.model.js di dalamnya
-![img1](../SS/Modul3/19.png)  
+![img1](../SS/Modul3/42.png)  
 
 * ### Langkah 3
 > Menambahkan baris kode berikut sesuai dengan tabel di atas 
-![img1](../SS/Modul3/20.png)
+![img1](../SS/Modul3/43.png)
 
 ## Operasi CRUD
 * ### Langkah 1
