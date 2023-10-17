@@ -45,7 +45,7 @@
 ![img1](../SS/Modul2/11.png)
 
 * ### Langkah 3
-> Melakukan insert buku “Overlord I” menggunakan perintah db.books.insertOne(<data kalian>), setelah insert buku berhasil maka MongoDB akan mengembalikan pesansebagai berikut.  
+Melakukan insert buku “Overlord I” menggunakan perintah db.books.insertOne(<data kalian>), setelah insert buku berhasil maka MongoDB akan mengembalikan pesansebagai berikut.  
 ![img1](../SS/Modul2/12.png)
 
 * ### Langkah 4
