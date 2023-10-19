@@ -45,7 +45,7 @@ return redirect()->route('route.auth.login');
 ![img1](../SS/Modul5/9.png)  
 Jika mengakses /auth/login maka akan memunculkan nilai “anda berhasil login”. Namun, ketika mengakses ke profile maka akan mendirect ke route get karena belum melakukan login.   
 
-* ### Group Route
+* ### 3. Group Route
 Pada lumen, kita juga dapat memberikan grouping pada routes kita agar lebih mudah pada saat penulisan route pada web.php kita. Kita dapat melakukan grouping dengan menggunakan syntax berikut,  
 $router->group(['prefix' => 'users'], function () use ($router)  
 {  
@@ -62,30 +62,10 @@ Memanggil get /users maka mengembalikan nilai “GET /users”
 ![img1](../SS/Modul5/12.png)  
 Memanggil get /users/test maka mengembalikan nilai “GET /users/test”.  
 
-* ### Middleware
-Middleware adalah penengah antara komunikasi aplikasi dan client. Middleware biasanya digunakan untuk membatasi siapa yang dapat berinteraksi dengan aplikasi kita dan semacamnya, kita dapat menambahkan middleware dengan menambahkan file pada folder app/Http/Middleware. Pada folder tersebut terdapat file ExampleMiddleware, kita dapat men-copy file tersebut untuk membuat middleware baru. Pada praktikum kali ini akan dibuat middleware Age dengan isi,  
-<?php  
-namespace App\Http\Middleware;  
-use Closure;  
-class AgeMiddleware  
-{  
-/**  
-
-* Handle an incoming request.  
-*  
-* @param \Illuminate\Http\Request $request  
-* @param \Closure $next  
-* @return mixed  
-*/  
-public function handle($request, Closure $next) {  
-if ($request->age < 17)  
-return redirect('/fail');  
-return $next($request);  
-}  
-}  
+* ### 4. Middleware
+Middleware adalah penengah antara komunikasi aplikasi dan client. Middleware biasanya digunakan untuk membatasi siapa yang dapat berinteraksi dengan aplikasi kita dan semacamnya, kita dapat menambahkan middleware dengan menambahkan file pada folder app/Http/Middleware. Pada folder tersebut terdapat file ExampleMiddleware, kita dapat men-copy file tersebut untuk membuat middleware baru. 
 ![img1](../SS/Modul5/13.png)  
 Memastikan request yang masuk ke controller sesuai dengan fungsinya. Kemudian, setelah menambahkan filter pada AgeMiddleware, kita harus mendaftarkan AgeMiddleware pada aplikasi kita, pada file bootstrap/app.php seperti berikut ini,  
-  
 73 ...  
 74  
 75 // $app->middleware([  
@@ -100,6 +80,7 @@ Memastikan request yang masuk ke controller sesuai dengan fungsinya. Kemudian, s
 83  
 84 ...  
 ![img1](../SS/Modul5/14.png)  
+
 Pada folder bootstrap file app.php, Uncomment routerMiddleware dan comment bagian auth lalu masukkan kode ‘'age' => App\Http\Middleware\AgeMiddleware::class’. Fungsinya untuk mendaftarkan middleware yang sudah dibuat yaitu AgeMiddleware.  
 Pada baris 65 terdapat comment mengenai proses mendaftarkan suatu middleware dalam aplikasi kita. Untuk menambahkan middleware pada aplikasi kita, kita dapat men- uncomment baris 75 hingga 77, kemudian menambahkan age middleware ke dalamnya.  
 Namun, karena kita hanya ingin menambahkan middleware pada route tertentu, kita akan menghapus comment pada baris 79 hingga 81, kemudian menambahkan middleware age di dalamnya. Lalu, kita dapat menambahkan middleware pada routes kita dengan menambahkan opsi middleware pada salah satu route, contohnya,  
@@ -108,4 +89,4 @@ $router->get('/admin/home/', ['middleware' => 'age', function ()
 $router->get('/fail', function () {  
 return 'Dibawah umur'; })  
 ![img1](../SS/Modul5/15.png)  
-![img1](../SS/Modul5/16.png)
+![img1](../SS/Modul5/16.png)  
