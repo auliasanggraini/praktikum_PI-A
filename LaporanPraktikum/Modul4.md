@@ -24,7 +24,7 @@ b. Setelah menginstall Thunder Client, akan melihat logo seperti petir pada acti
 c. Membuat request dengan menekan "New Request" pada ekstensi  
 ![img1](../SS/Modul4/7.png)  
 
-d. Setelah itu kita dapat memasukkan method dan url yang dituju  
+d. Setelah itu kita dapat memasukkan method dan url yang dituju   
 ![img1](../SS/Modul4/8.png)  
 
 e. Akses url yang baru saja ditambahkan pada aplikasi dengan methodnya  
